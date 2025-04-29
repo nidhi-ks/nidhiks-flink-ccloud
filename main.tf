@@ -175,7 +175,7 @@ resource "confluent_flink_statement" "my_flink_statement" {
 }
 
 # Deploy a Flink SQL statement to Confluent Cloud.
-resource "confluent_flink_statement" "my_flink_statement" {
+resource "confluent_flink_statement" "my_flink_statement_1" {
   organization {
     id = data.confluent_organization.my_org.id
   }
