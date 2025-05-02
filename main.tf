@@ -152,7 +152,7 @@ resource "confluent_flink_statement" "my_flink_statement" {
       COUNT(*) AS cnt
     FROM
     TABLE(TUMBLE(TABLE `examples`.`marketplace`.`orders`, DESCRIPTOR($rowtime), INTERVAL '1' MINUTE))
-    GROUP BY window_start , window_end ;
+    GROUP BY window_start;
     EOT
 
   properties = {
