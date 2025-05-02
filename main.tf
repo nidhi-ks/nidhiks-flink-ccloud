@@ -144,7 +144,7 @@ resource "confluent_flink_statement" "my_flink_statement" {
 
   # This SQL reads data from source_topic, filters it, and ingests the filtered data into sink_topic.
   statement = <<EOT
-    CREATE TABLE my_sink_topic AS
+    CREATE TABLE my_sink_topic_1 AS
     SELECT
       window_start,
       window_end,
@@ -152,7 +152,7 @@ resource "confluent_flink_statement" "my_flink_statement" {
       COUNT(*) AS cnt
     FROM
     TABLE(TUMBLE(TABLE `examples`.`marketplace`.`orders`, DESCRIPTOR($rowtime), INTERVAL '1' MINUTE))
-    GROUP BY window_start;
+    GROUP BY window_start, window_end;
     EOT
 
   properties = {
