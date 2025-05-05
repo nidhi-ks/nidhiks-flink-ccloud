@@ -1,1 +1,1 @@
-Deloying flink statement using terraform using CI/CD pipeline .
+Deloying flink statement using terraform with CI/CD pipeline .
