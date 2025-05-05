@@ -1,2 +1,1 @@
-# nidhiks-flink-ccloud
-cc flink 
+Deloying flink statement using terraform using CI/CD pipeline .
